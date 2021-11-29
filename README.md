@@ -24,5 +24,9 @@ This README file is going to be used by me to keep track of what I am doing as I
 
 - Started working on the PyPoll Challenge
 
+  ## Nov 29
+
+  - Looks like I now have the code working
+  - Time to clean up the directories and check the requirements again
   
 

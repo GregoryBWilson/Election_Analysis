@@ -12,14 +12,16 @@ file_to_save = os.path.join("analysis", "election_analysis.txt")
 
 # Initialize a total vote counter.
 total_votes = 0
+county_voter_turnout = 0
 
 # Candidate Options and candidate votes.
 candidate_options = []
 candidate_votes = {}
 
 # 1: Create a county list and county votes dictionary.
-
-
+# County Options and county votes.
+county_options = []
+county_votes = {}
 
 # Track the winning candidate, vote count and percentage
 winning_candidate = ""
@@ -27,8 +29,9 @@ winning_count = 0
 winning_percentage = 0
 
 # 2: Track the largest county and county voter turnout.
-
-
+largest_county = ""
+largest_count = 0
+largest_percentage = 0
 
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
@@ -42,13 +45,15 @@ with open(file_to_load) as election_data:
 
         # Add to the total vote count
         total_votes = total_votes + 1
+        county_voter_turnout = county_voter_turnout + 1
 
         # Get the candidate name from each row.
         candidate_name = row[2]
 
         # 3: Extract the county name from each row.
-
-
+        # Get the county name from each row.
+        county_name = row[1]
+        
         # If the candidate does not match any existing candidate add it to
         # the candidate list
         if candidate_name not in candidate_options:
@@ -64,17 +69,21 @@ with open(file_to_load) as election_data:
 
         # 4a: Write an if statement that checks that the
         # county does not match any existing county in the county list.
-
+        # If the county does not match any existing county add it to
+        # the county list
+        if county_name not in county_options:
 
             # 4b: Add the existing county to the list of counties.
-
+            # Add the candidate name to the candidate list.
+            county_options.append(county_name)
 
             # 4c: Begin tracking the county's vote count.
-
+            # And begin tracking that county's voter count.
+            county_votes[county_name] = 0
 
         # 5: Add a vote to that county's vote count.
-
-
+        # Add a vote to that county's count
+        county_votes[county_name] += 1
 
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
@@ -91,8 +100,49 @@ with open(file_to_save, "w") as txt_file:
     txt_file.write(election_results)
 
     # 6a: Write a for loop to get the county from the county dictionary.
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"County Voter Turnout: {county_voter_turnout:,}\n"
+        f"-------------------------\n\n"
+        f"County Votes:\n")
+    print(election_results, end="")
+
+    txt_file.write(election_results)
 
         # 6b: Retrieve the county vote count.
+# Save the final county vote count to the text file.
+    for county_name in county_votes:
+
+        # Retrieve vote count and percentage
+        votes = county_votes.get(county_name)
+        vote_percentage = float(votes) / float(county_voter_turnout) * 100
+        county_results = (
+            f"{county_name}: {vote_percentage:.1f}% ({votes:,})\n")
+
+        # Print each county's voter count and percentage to the
+        # terminal.
+        print(county_results)
+        #  Save the candidate results to our text file.
+        txt_file.write(county_results)
+
+        # Determine biggest vote count, biggest percentage, and county.
+        if (votes > largest_count) and (vote_percentage > largest_percentage):
+            largest_count = votes
+            largest_county = county_name
+            largest_percentage = vote_percentage
+
+    # Print the winning county (to terminal)
+    winning_county_summary = (
+        f"-------------------------\n"
+        f"Best Voter Turnout: {largest_county}\n"
+        f"Votes cast: {largest_count:,}\n"
+        f"Percentage of ballets: {largest_percentage:.1f}%\n"
+        f"-------------------------\n")
+    print(winning_county_summary)
+
+    # Save the winning county's name to the text file
+    txt_file.write(winning_county_summary)
 
         # 6c: Calculate the percentage of votes for the county.
 
