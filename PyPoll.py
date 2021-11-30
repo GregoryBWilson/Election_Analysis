@@ -85,6 +85,10 @@ with open(file_to_load) as election_data:
         # Add a vote to that county's count
         county_votes[county_name] += 1
 
+# Added a line to make sure that all the ballets have been counted in both mothods
+if county_voter_turnout != total_votes:
+    print("Check your math and error has occurred in the audit")
+
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
 
@@ -100,15 +104,15 @@ with open(file_to_save, "w") as txt_file:
     txt_file.write(election_results)
 
     # 6a: Write a for loop to get the county from the county dictionary.
-    election_results = (
-        f"\nElection Results\n"
-        f"-------------------------\n"
-        f"County Voter Turnout: {county_voter_turnout:,}\n"
-        f"-------------------------\n\n"
-        f"County Votes:\n")
-    print(election_results, end="")
+    # election_results = (
+    #     f"\nElection Results\n"
+    #     f"-------------------------\n"
+    #     f"County Voter Turnout: {county_voter_turnout:,}\n"
+    #     f"-------------------------\n\n"
+    #     f"County Votes:\n")
+    # print(election_results, end="")
 
-    txt_file.write(election_results)
+    # txt_file.write(election_results)
 
         # 6b: Retrieve the county vote count.
 # Save the final county vote count to the text file.
@@ -118,7 +122,7 @@ with open(file_to_save, "w") as txt_file:
         votes = county_votes.get(county_name)
         vote_percentage = float(votes) / float(county_voter_turnout) * 100
         county_results = (
-            f"{county_name}: {vote_percentage:.1f}% ({votes:,})\n")
+            f"{county_name}: {vote_percentage:.1f}% ({votes:,})")
 
         # Print each county's voter count and percentage to the
         # terminal.
@@ -134,10 +138,10 @@ with open(file_to_save, "w") as txt_file:
 
     # Print the winning county (to terminal)
     winning_county_summary = (
-        f"-------------------------\n"
-        f"Best Voter Turnout: {largest_county}\n"
-        f"Votes cast: {largest_count:,}\n"
-        f"Percentage of ballets: {largest_percentage:.1f}%\n"
+        f"\n-------------------------\n"
+        f"Largest Voter Turnout: {largest_county}\n"
+ #       f"Votes cast: {largest_count:,}\n"
+ #       f"Percentage of ballets: {largest_percentage:.1f}%\n"
         f"-------------------------\n")
     print(winning_county_summary)
 
