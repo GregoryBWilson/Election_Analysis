@@ -18,7 +18,6 @@ county_voter_turnout = 0
 candidate_options = []
 candidate_votes = {}
 
-# 1: Create a county list and county votes dictionary.
 # County Options and county votes.
 county_options = []
 county_votes = {}
@@ -28,7 +27,7 @@ winning_candidate = ""
 winning_count = 0
 winning_percentage = 0
 
-# 2: Track the largest county and county voter turnout.
+# Track the largest county and county voter turnout.
 largest_county = ""
 largest_count = 0
 largest_percentage = 0
@@ -50,7 +49,6 @@ with open(file_to_load) as election_data:
         # Get the candidate name from each row.
         candidate_name = row[2]
 
-        # 3: Extract the county name from each row.
         # Get the county name from each row.
         county_name = row[1]
         
@@ -67,27 +65,23 @@ with open(file_to_load) as election_data:
         # Add a vote to that candidate's count
         candidate_votes[candidate_name] += 1
 
-        # 4a: Write an if statement that checks that the
-        # county does not match any existing county in the county list.
+
         # If the county does not match any existing county add it to
         # the county list
         if county_name not in county_options:
 
-            # 4b: Add the existing county to the list of counties.
-            # Add the candidate name to the candidate list.
+            # Add the county name to the county list.
             county_options.append(county_name)
 
-            # 4c: Begin tracking the county's vote count.
             # And begin tracking that county's voter count.
             county_votes[county_name] = 0
 
-        # 5: Add a vote to that county's vote count.
         # Add a vote to that county's count
         county_votes[county_name] += 1
 
 # Added a line to make sure that all the ballets have been counted in both mothods
 if county_voter_turnout != total_votes:
-    print("Check your math and error has occurred in the audit")
+    print("Check your math an error has occurred in the audit")
 
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
@@ -103,18 +97,6 @@ with open(file_to_save, "w") as txt_file:
 
     txt_file.write(election_results)
 
-    # 6a: Write a for loop to get the county from the county dictionary.
-    # election_results = (
-    #     f"\nElection Results\n"
-    #     f"-------------------------\n"
-    #     f"County Voter Turnout: {county_voter_turnout:,}\n"
-    #     f"-------------------------\n\n"
-    #     f"County Votes:\n")
-    # print(election_results, end="")
-
-    # txt_file.write(election_results)
-
-        # 6b: Retrieve the county vote count.
 # Save the final county vote count to the text file.
     for county_name in county_votes:
 
@@ -127,10 +109,10 @@ with open(file_to_save, "w") as txt_file:
         # Print each county's voter count and percentage to the
         # terminal.
         print(county_results)
-        #  Save the candidate results to our text file.
+        # Save the candidate results to our text file.
         txt_file.write(county_results)
 
-        # Determine biggest vote count, biggest percentage, and county.
+        # Determine largest vote count, largest percentage, and county.
         if (votes > largest_count) and (vote_percentage > largest_percentage):
             largest_count = votes
             largest_county = county_name
@@ -140,29 +122,12 @@ with open(file_to_save, "w") as txt_file:
     winning_county_summary = (
         f"\n-------------------------\n"
         f"Largest Voter Turnout: {largest_county}\n"
- #       f"Votes cast: {largest_count:,}\n"
- #       f"Percentage of ballets: {largest_percentage:.1f}%\n"
+
         f"-------------------------\n")
     print(winning_county_summary)
 
     # Save the winning county's name to the text file
     txt_file.write(winning_county_summary)
-
-        # 6c: Calculate the percentage of votes for the county.
-
-
-         # 6d: Print the county results to the terminal.
-
-         # 6e: Save the county votes to a text file.
-
-         # 6f: Write an if statement to determine the winning county and get its vote count.
-
-
-    # 7: Print the county with the largest turnout to the terminal.
-
-
-    # 8: Save the county with the largest turnout to a text file.
-
 
     # Save the final candidate vote count to the text file.
     for candidate_name in candidate_votes:
