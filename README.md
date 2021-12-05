@@ -1,7 +1,3 @@
-✓The written analysis has ALL of the following: ✓There is a title, and there are multiple sections. ✓Each section has a heading. ✓There are images and references to code, and they are formatted and displayed correctly.
-
-✓The purpose is well defined. ✓ALL FIVE election outcomes are addressed. ✓There is a statement to the election commission on how this script can be used for any election with two examples given.
-
 # Analysis of Election Results
 
 ## 1 Overview of Project
@@ -79,6 +75,16 @@ The results did show that at 82.8% of the county votes, Denver contributed to th
 
 The results did show that Diana DeGette was determined to have been the winner with an overwhelming 73.8% of the total votes counted.  Unfortunately, based on the county data findings in section 2.2.1 it would not be possible to certify the results until such time a the county based missing ballet issue has been resolved.
 
+#### 2.2.3 Summary of Election Outcomes
+
+In summary this is what has been determined from the election data analyzed:
+
+- The total votes casted based on county either the candidate that was selected or the county in which the ballet came from was 369,711 confirming that the data has been validated.
+- The largest number of votes came from Denver county with 306, 055 votes accounting for 82.8% of all votes
+- The county vote count is verified by the fact that the total votes by county add to 369,711 and the percentages add to 100%
+- The largest vote count by candidate goes to Diana DeGette with 272,892 votes accounting for 73.8% of the votes
+- The candidate vote count is verified by the fact that the total votes by candidate add to 369,711 and the percentages add to 100%
+
 ### 2.3 Overview of Analysis
 #### What do we know?  
 Elections are very important as they affect the future of all citizens and they therefore need to represent everyone who has casted a ballot: 
@@ -91,9 +97,36 @@ As is often the case there are always going to be more information required:
 - We also don't know if maybe we are just analyzing test data to see if we really would be able to find data discrepancies 
 
 #### How can we help?  
-It is my option that Tom's boss Seth was just trying to see how well the Python fill would work, and I would have to say that we passed the test.    It is apparent that Seth is a forward thinking man and is likely looking to get a bigger job within the state of Colorado.   I think what we have to do to help him with he lofting goal is to:
+It is my option that Tom's boss Seth was just trying to see how well the Python file would work, and I would have to say that we passed the test.    It is apparent that Seth is a forward thinking man and is likely looking to get a bigger job within the state of Colorado.   I think what we have to do to help him with his goal is to:
 
 - Asks him for a complete set of data so that we can prove that the program will work on a much larger data set.
 - Prepare a detailed briefing for an assist Seth when pitching a statewide audit system that he would be in charge of.
 
-I would recommend that Tom further engage my consulting services to determine if, through the analysis of more information, the auditing capability can be enhanced.  Knowing what percentage of county votes went to a particular candidate, for example, may be of value in determining other voting irregularities.
+I would recommend that Tom further engage my consulting services to determine if, through the analysis of more information, the auditing capability can be enhanced.  Knowing what percentage of county votes went to a particular candidate, for example, may be of value in determining other voting irregularities.  
+
+Here are two clear uses of the application that Seth could propose the the election commission:
+
+- The first application is to analyze data at a more granular level, for example the county votes are derived from a number of election precincts.  Collecting precinct data and comparing it to all expected precincts in a given county would help validate the integrity of the data analyzed.
+- The second application would be to analyze the data across the entire state.  Since we know that Colorado consists of a much greater number of counties than the three extracted from the data we currently have, we could easily modify the  application to identify missing counties by comparing the extracted county list against a list of expected counties.
+
+### 3.0 Resource Navigation
+
+This section of the report in intended to help the reader locate the applicable folder and files that have been used to develop this report.
+
+#### 3.1 Repository Home
+
+In the home repository you will find, this README file, a ZIP file of the entire repository and most importantly the PyPoll.py program that has been developed to analyze the election data.
+
+#### 3.1 Resources Folder
+
+Within the Home Repository you will find a folder called "Resources" that contains the following files:
+
+- The original raw election data in the file election_results.csv
+- Eight PNG files that are figures that are referenced throughout this report
+
+#### 3.2 Analysis Folder
+
+The "analysis" folder is also a subfolder of the Home Repository.  It contains the text file out of the analysis called "election_analysis.txt".
+
+
+
