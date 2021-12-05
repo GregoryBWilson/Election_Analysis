@@ -6,7 +6,7 @@ This project was the third challenge in the Carleton University Business Analyti
 
 ### 1.1 Purpose
 
-The purpose of the specific project within this module was to assist a Colorado Board of Elections employee , Tom.  He will be conducting an election audit of the tabulated elections results for a US congressional precinct .  This is typically performed in Excel but Tom's boss, Seth, wants to know if in can be automated using Python.  We were provided with pseudo code that assess a few of the required results and we were asked to complete the program and provide a complete analysis for the results.
+The purpose of the specific project within this module was to assist a Colorado Board of Elections employee , Tom.  He will be conducting an election audit of the tabulated elections results for a US congressional precinct .  This is typically performed in Excel but Tom's boss, Seth, wants to know if in can be automated using Python.  We were provided with pseudo code that assessed a few of the required results and we were asked to complete the program and provide a complete analysis of the results.
 
 ### 1.2 Approach
 
@@ -15,43 +15,43 @@ Working with a large data file of ballots, election_results.csv, the basis of th
 ![This is a VS screenshot of the PyPoll.py code](Resources/Reading_Header.png "Figure 1.1 - Reading the csv file header")  
 **Figure 1.1 - Reading the csv file header**
 
-The next step was to loop through the data row of reader to extract candidate and county name from the appropriate column if the row of data as shown in figure 1.2 below.
+The next step was to loop through the data rows of reader to extract candidate and county names from the appropriate column in the row of data as shown in figure 1.2 below.
 
 ![This is a VS screenshot of the PyPoll.py code](Resources/Loop_Through_Rows.png "Figure 1.2 - Looping Through Data Rows")  
 **Figure 1.2 - Looping through data rows**
 
-In figure 1.3 you can see that we are extracting a unique list of candidates, and also enumerating information from the individual ballets and adding them to the candidate votes dictionary.
+In figure 1.3 you can see that we are extracting a unique list of candidates, and also enumerating information from the individual ballots and adding them to the candidate votes dictionary.
 
 ![This is a VS screenshot of the PyPoll.py code](Resources/Extract_Unique_Candidates.png "Figure 1.3 - Building Candidate List and Candidate Vote Dictionary")  
 **Figure 1.3 - Building Candidate List and Candidate Vote Dictionary**
 
-In a similar fashion, in figure 1.4 you can see that we are extracting a unique list of county name, and also enumerating information from the individual ballets and adding them to the county votes dictionary.
+In a similar fashion, in figure 1.4 you can see that we are extracting a unique list of county names, and also enumerating the information from the individual ballots and adding them to the county votes dictionary.
 
 ![This is a VS screenshot of the PyPoll.py code](Resources/Extract_Unique_Counties.png "Figure 1.4 - Building Candidate List and Candidate Vote Dictionary")  
 **Figure 1.4 - Building County List and County Vote Dictionary**
 
-In figure 1.5 we check the total votes cast for all candidates against the total votes cast in all counties.  These numbers by definition should match, so if they do not than an error has occurred and the code and/or data would then need to be checked for a cause.
+In figure 1.5 we check the total votes cast for all candidates against the total votes cast in all counties.  These numbers, by definition, should match, so if they do not than an error has occurred and the code and/or data would then need to be checked for a cause.
 
 ![This is a VS screenshot of the PyPoll.py code](Resources/Data_Cross_Check_Validation.png "Figure 1.5 - Cross Checking the Total Vote Count")  
 **Figure 1.5 - Cross Checking the Total Vote Count**
 
-The last and most important part was to output the results both to the screening as well as a text file.  The code for this is shown in figure 1.6, it include another class from the csv library that facilitates writing to a text file.
+The last and most important part was to output the results both to the screen as well as a text file.  The code for this is shown in figure 1.6, it includes another class from the csv library that facilitates writing to a text file.
 
 ![This is a VS screenshot of the PyPoll.py code](Resources/Outputting_Results.png "Figure 1.6 - Writing the Result to the Screen and a File")  
 **Figure 1.6 - Writing the Result to the Screen and a File**
 
 ### 1.3 Challenges
 
-There were a few challenges in working on this project and they were because I have used much older programming languages like Fortran.  We also just completed a unit using Visual Basic scripts in macro enabled Excel spreadsheets.  This was my first time working with Python and as a result here is the list of the issues that I faced:
+There were a few challenges in working on this project and they were because I have, in my career, used much older programming languages like Fortran.  We also just completed a unit using Visual Basic scripts in macro enabled Excel spreadsheets.  This was my first time working with Python and as a result here is the list of the issues that I faced:
 
-- The biggest challenge was the fact that Python is so very dependent on indentation to determine the end of loops and conditional branches.   A great amount of attention is require to make sure the code is being read as you intended it to be.
-- Capitalization (or should I say non-capitalization) for key words - "**for** example **For**" 
-- Python has a large number of available coding methods and libraries that can make you life very easy, the challenge is finding out what is available.  Reviewing lots of other code helps expose you to some new efficencies, like the use of x += 1 can replace x = x =1, very simple and very useful indeed. 
+- The biggest challenge was the fact that Python is so very dependent on indentation to determine the end of loops and conditional branches - instead of a very clear end statement.   A great amount of attention was required to make sure that the code was being read as I intended it to be.
+- Capitalization (or should I say non-capitalization) for key words - "**for** example **For**".  Again I had to make sure the statements were being evaluated as the expected code.
+- Python has a large number of available coding methods and libraries that can make you life very easy, the challenge is finding out what is available.  Reviewing lots of other code helps expose you to some new efficiencies, like the use of x += 1 can replace x = x + 1, very simple and very useful indeed. 
 
 ## 2 Analysis and Observations
 ### 2.1 Audit of the Election Results
 
-Figure 2.1 below was captured using the "Save as Image" right click feature in GitBash.
+Figure 2.1 below was captured using the "Save as Image" right click feature in GitBash.  This is the screen presentation of the election results.
 
 ![This is a image capture from GitBash running](Resources/Election_Results_GitBash.png "Figure 2.1 - Election Results as View on Screen")  
 **Figure 2.1 - Election Results as View on Screens**
@@ -61,25 +61,25 @@ The results of the election were also written to a text file, "election_analysis
 ![This is a screen shot from a Notepad view for the file](Resources/Election_Results_Text_File.png "Figure 2.2 - Election Results as Written to a Text File")  
 **Figure 2.2 - Election Results as Written to a Text File**
 
-The program correctly captures the required data and displaces it clearly both directly on the screening and in the required text file format. 
+The program correctly captures the required data and displays it clearly both directly on the screen and in the required text file format. 
 
 ### 2.2 Observations
 
-The first important observation is that the sum of ballets equals 369,711 when count by ballets from a county or ballets for a given candidate.  It is important to confirm the validity of the results by appropriately cross check the data for the possibly of errors.  As illustrated in the approach section above, figure 1.5 our program would have display an error message if these two method resulted in a different count of total ballets.
+The first important observation is that the sum of ballots equals 369,711 when counted by ballots from a county or ballots for a given candidate.  It is important to confirm the validity of the results by appropriately cross checking the data for the possibly of errors.  As illustrated in the approach section above, see figure 1.5, our program would have display an error message if these two method resulted in a different count of total ballots.
 
 #### 2.2.1 Review of County Data
 
-The results did show that at 82.8% of the county votes, Denver contributed to the vast majority of the quotes.   This is a very surprising result since Jefferson, Denver, and Arapahoe are amount the largest counties in Colorado with reasonably comparable populations.  I am concerned that not all of the ballets are represented in the data that has been provided for audit.  I recommend that the data source be thoroughly reviewed for missing ballet sources.
+The results did show that at 82.8% of the county votes, Denver contributed to the vast majority of the votes.   This is a very surprising result since Jefferson, Denver, and Arapahoe are amount the largest counties in Colorado with reasonably comparable populations.  I am concerned that not all of the ballots are represented in the data that has been provided for audit.  I recommend that the data source be thoroughly reviewed for missing ballot sources.
 
 #### 2.2.2 Review of Candidate Data
 
-The results did show that Diana DeGette was determined to have been the winner with an overwhelming 73.8% of the total votes counted.  Unfortunately, based on the county data findings in section 2.2.1 it would not be possible to certify the results until such time a the county based missing ballet issue has been resolved.
+The results did show that Diana DeGette was determined to have been the winner with an overwhelming 73.8% of the total votes counted.  Unfortunately, based on the county data findings in section 2.2.1 it would not be possible to certify the results until such time a the county based missing ballot issue has been resolved.
 
 #### 2.2.3 Summary of Election Outcomes
 
 In summary this is what has been determined from the election data analyzed:
 
-- The total votes casted based on county either the candidate that was selected or the county in which the ballet came from was 369,711 confirming that the data has been validated.
+- The total votes casted based on counting either the candidate that was selected or the county in which the ballot came from was 369,711 confirming that the data has been validated.
 - The largest number of votes came from Denver county with 306, 055 votes accounting for 82.8% of all votes
 - The county vote count is verified by the fact that the total votes by county add to 369,711 and the percentages add to 100%
 - The largest vote count by candidate goes to Diana DeGette with 272,892 votes accounting for 73.8% of the votes
@@ -88,8 +88,8 @@ In summary this is what has been determined from the election data analyzed:
 ### 2.3 Overview of Analysis
 #### What do we know?  
 Elections are very important as they affect the future of all citizens and they therefore need to represent everyone who has casted a ballot: 
-- What we do know is that the Python program works effectively and without error..  
-- We also know that the end there appears to be missing data sources that are not in the data that has been provided.
+- What we do know is that the Python program works effectively and without error.  
+- We also know that there appears to be missing data sources that are not in the data that has been provided.
 
 #### What don't we know?
 As is often the case there are always going to be more information required:
@@ -106,12 +106,12 @@ I would recommend that Tom further engage my consulting services to determine if
 
 Here are two clear uses of the application that Seth could propose the the election commission:
 
-- The first application is to analyze data at a more granular level, for example the county votes are derived from a number of election precincts.  Collecting precinct data and comparing it to all expected precincts in a given county would help validate the integrity of the data analyzed.
+- The first application is to analyze data at a more granular level, for example the county votes are derived from a number of election polling stations.  Collecting polling station data and comparing it to all expected polling stations in a given county would help validate the integrity of the data analyzed.
 - The second application would be to analyze the data across the entire state.  Since we know that Colorado consists of a much greater number of counties than the three extracted from the data we currently have, we could easily modify the  application to identify missing counties by comparing the extracted county list against a list of expected counties.
 
 ### 3.0 Resource Navigation
 
-This section of the report in intended to help the reader locate the applicable folder and files that have been used to develop this report.
+This section of the report in intended to help the reader locate the applicable folders and files that have been used to develop this report.
 
 #### 3.1 Repository Home
 
@@ -119,14 +119,14 @@ In the home repository you will find, this README file, a ZIP file of the entire
 
 #### 3.1 Resources Folder
 
-Within the Home Repository you will find a folder called "Resources" that contains the following files:
+Within the Home Repository you will also find a folder called "Resources" that contains the following files:
 
-- The original raw election data in the file election_results.csv
-- Eight PNG files that are figures that are referenced throughout this report
+- The original raw election data in the file "election_results.csv"
+- Eight PNG files that are image files of the figures that are referenced throughout this report
 
 #### 3.2 Analysis Folder
 
-The "analysis" folder is also a subfolder of the Home Repository.  It contains the text file out of the analysis called "election_analysis.txt".
+The "analysis" folder is also a subfolder of the Home Repository.  It contains the text file output of the analysis called "election_analysis.txt".
 
 
 
